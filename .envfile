@@ -1,3 +1,4 @@
+APP_ENV=development
 APP_DEBUG=true
 APP_KEY=SomeRandomString
 
@@ -7,6 +8,4 @@ DB_USERNAME=hopattendancedir
 DB_PASSWORD=HopchurchChennai41!
 
 CACHE_DRIVER=file
-CACHE_DRIVER=file
-SESSION_DRIVER=file
 SESSION_DRIVER=file
