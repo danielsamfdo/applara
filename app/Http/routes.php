@@ -10,22 +10,27 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('/', 'WelcomeController@index');
-Route::post('users/{id}/update_profile_picture', 'UsersController@update_profile_picture');
-Route::post('families/{id}/update_profile_picture', 'FamiliesController@update_profile_picture');
-Route::post('attendances/{id}/mark_attendance', 'AttendanceController@mark_attendance');
-Route::resource('users', 'UsersController');
-Route::resource('families', 'FamiliesController');
-Route::resource('zones', 'ZoneController');
 
-Route::resource('attendances', 'AttendanceController');
 
-Route::get('home', 'HomeController@index');
+// Authentication routes...
+Route::get('/auth/login', 'Auth\AuthController@login');
+Route::post('/auth/login', 'Auth\AuthController@postLogin');
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+// Registration routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');Route::get('/', 'WelcomeController@index');
+    Route::post('users/{id}/update_profile_picture', 'UsersController@update_profile_picture');
+    Route::post('families/{id}/update_profile_picture', 'FamiliesController@update_profile_picture');
+    Route::post('attendances/{id}/mark_attendance', 'AttendanceController@mark_attendance');
+    Route::resource('users', 'UsersController');
+    Route::resource('families', 'FamiliesController');
+    Route::resource('zones', 'ZoneController');
+
+    Route::resource('attendances', 'AttendanceController');
+    Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+    Route::get('home', 'HomeController@index');
+
 
 if (Config::get('database.log', false))
 {           
