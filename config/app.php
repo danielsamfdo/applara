@@ -1,5 +1,6 @@
 <?php
 
+error_reporting(E_ALL ^ E_DEPRECATED);
 return [
 
 	/*
@@ -12,7 +13,7 @@ return [
 	| application. If disabled, a simple generic error page is shown.
 	|
 	*/
-
+	
 	'debug' => env('APP_DEBUG'),
 
 	/*
